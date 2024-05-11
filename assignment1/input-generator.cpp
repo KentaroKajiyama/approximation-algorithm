@@ -3,6 +3,7 @@
 #include <vector>
 #include <random>
 
+#define NUM_SAMPLES 10000
 using namespace std;
 
 int partition(vector<int>& happiness, vector<int>& weight, vector<float>& h_w_quotient, int p, int r) {
@@ -67,10 +68,12 @@ void generate(int W, int n) {
 }
 
 int main() {
-  int num_samples = 2;
+  // W: the upper bound of the sum of the weights
+  // n: the number of strawberries
+  // num_samples: the number of samples to be generated
   int W = 250;
-  int n = 30;
-  for (int i = 0; i < num_samples; i++)
+  int n = 10;
+  for (int i = 0; i < NUM_SAMPLES; i++)
   {
     generate(W,n);
   }
