@@ -4,6 +4,9 @@
 #include <random>
 
 #define NUM_SAMPLES 10000
+#define WEIGHT_UPPER_BOUND 150
+#define NUM_STRAWBERRY 10
+
 using namespace std;
 
 int partition(vector<int>& happiness, vector<int>& weight, vector<float>& h_w_quotient, int p, int r) {
@@ -71,11 +74,9 @@ int main() {
   // W: the upper bound of the sum of the weights
   // n: the number of strawberries
   // num_samples: the number of samples to be generated
-  int W = 250;
-  int n = 10;
   for (int i = 0; i < NUM_SAMPLES; i++)
   {
-    generate(W,n);
+    generate(WEIGHT_UPPER_BOUND,NUM_STRAWBERRY);
   }
   return 0;
 }

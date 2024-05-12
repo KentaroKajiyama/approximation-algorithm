@@ -20,11 +20,11 @@ def main():
   average_value = sum(quotient_data)/len(quotient_data)
   # Plot the data
   plt.plot(quotient_data, label="SOL/OPT")
-  plt.scatter(min_index, min_value, color="red", s=100, label="minimum value")
+  plt.scatter(min_index, min_value, color="red", s=100, label="M:minimum value")
   plt.axhline(y=0.5, color="gray", linestyle='--', label="SOL/OPT=1/2")
-  plt.axhline(y=average_value, color="blue", label="Average(SOL/OPT)")
+  plt.axhline(y=average_value, color="yellow", label="A:average(SOL/OPT)")
   # Add labels and legend
-  plt.title("Quotient of SOL/OPT Over Index")
+  plt.title("SOL/OPT")
   plt.xlabel("Index")
   plt.ylabel("SOL/OPT")
   plt.legend()
