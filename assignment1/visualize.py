@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import os
 
 CWD = os.getcwd()
+
 def main():
   # Load the data from the result files
   opt_path = os.path.join(CWD,"assignment1\\OPT.txt")
@@ -13,7 +14,7 @@ def main():
     sol_data_string = f.read().splitlines()
   sol_data = [int(element) for element in sol_data_string]
   # Convert to the quotient of sol/opt
-  quotient_data = [sol/opt for sol,opt in zip(sol_data,opt_data)]
+  quotient_data = [ sol/opt if opt > 0 else 1 for sol,opt in zip(sol_data,opt_data)]
   #Find minimum value and its index
   min_value = min(quotient_data)
   min_index = quotient_data.index(min_value)
@@ -24,7 +25,7 @@ def main():
   plt.axhline(y=0.5, color="gray", linestyle='--', label="SOL/OPT=1/2")
   plt.axhline(y=average_value, color="yellow", label="A:average(SOL/OPT)")
   # Add labels and legend
-  plt.title("SOL/OPT")
+  plt.title("SOL/OPT : W=250")
   plt.xlabel("Index")
   plt.ylabel("SOL/OPT")
   plt.legend()

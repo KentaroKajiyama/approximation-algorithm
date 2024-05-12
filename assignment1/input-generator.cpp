@@ -4,7 +4,7 @@
 #include <random>
 
 #define NUM_SAMPLES 10000
-#define WEIGHT_UPPER_BOUND 150
+#define WEIGHT_UPPER_BOUND 250
 #define NUM_STRAWBERRY 10
 
 using namespace std;
